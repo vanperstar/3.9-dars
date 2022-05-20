@@ -60,61 +60,43 @@ const result_password = document.getElementById('result_password')
 
 form.addEventListener('submit', (e) => {
   let messages = []
-  if (name.value === '' || name.value == null) {
-    messages.push('ism talab qilinadi')
-  }
+  // if (name.value === '' || name.value == null) {
+  //   messages.push('ism talab qilinadi')
+  // }
 
-  if (name.value.length <= 15) {
+  if (name.value.length <= 50) {
     messages.push('')
   }
 
-  if (name.value.length >= 30) {
-    messages.push('Email @ bilan yozilishi  kerak')
-  }else{
-    messages.push('')
-  }
+  // if (name.value.length >= 30) {
+  //   messages.push('Email @ bilan yozilishi  kerak')
+  // }else{
+  //   messages.push('')
+  // }
 
-  if (messages.length > 0) {
-    e.preventDefault()
-    // errorElement.innerText = messages.join(', ')
-    result_email.innerText = messages.join('')
-  }
+  // if (messages.length > 0) {
+  //   e.preventDefault()
+  //   // errorElement.innerText = messages.join(', ')
+  //   result_email.innerText = messages.join('')
+  // }
 
 
   if (password.value.length <= 8) {
     messages.push('Parol 8 ta belgidan kam bolmasligi kerak')
   }
 
-  if (password.value.length >= 12) {
+  if (password.value.length >= 16) {
     messages.push('Parol 12 belgidan kam bolishi kerak')
+    
   }else{
-    messages.push('')
+    messages.push('  Parol togri kiritildi')
   }
 
   if (messages.length > 0) {
     e.preventDefault()
     // errorElement.innerText = messages.join(', ')
-    result_password.innerText = messages.join('togri ')
+    result_password.innerText = messages.join('Login togri kiritildi ')
   }
 })
 
 
-
-
-// var elForm = document.querySelector('.form')
-// var elEmailInput = elForm.querySelector('.username')
-// var elPasswordInput = elForm.querySelector('.password')
-// var elResult = elForm.querySelector('.result')
-
-// elForm.addEventListener('submit', (event) => {
-//   event.preventDefault()
-//   elResult.textContent = ('')
-
-//   if (elEmailInput.value === credentials.login && elPasswordInput.value === credentials) {
-//     elResult = ('togri')
-//     console.log('togri')
-//   }else{
-//     elResult = ('notogri')
-//     console.log('no')
-//   }
-// })
